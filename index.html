@@ -1,46 +1,81 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CELEBLABEL - Link</title>
+  <title>CELEBLABEL | Link</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
-    body { background: linear-gradient(135deg, #fff0f5, #f0f8ff); }
-    .link-card { transition: all 0.3s ease; }
-    .link-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 25px 30px -10px rgba(236, 72, 153, 0.2);
+    body {
+      background: linear-gradient(135deg, #fdf4ff, #f0f9ff);
+    }
+    .link-btn {
+      transition: all 0.3s ease;
+    }
+    .link-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center py-12 px-4">
-  <div class="max-w-md w-full mx-auto text-center">
-    <div class="mb-10">
-      <img src="https://via.placeholder.com/150/FF69B4/FFFFFF?text=CELEBLABEL" 
-           alt="CELEBLABEL" 
-           class="w-28 h-28 mx-auto rounded-3xl object-cover border-4 border-white shadow-2xl">
-      <h1 class="mt-6 text-4xl font-bold text-pink-600">CELEBLABEL</h1>
-      <p class="text-gray-600 mt-2 text-lg">Honest K-Beauty Reviews</p>
+<body class="min-h-screen flex items-center justify-center py-10 px-4">
+  <div class="max-w-md w-full mx-auto">
+    
+    <!-- Header with Logo -->
+    <div class="text-center mb-8">
+      <img src="https://www.celeblabel.com/wp-content/uploads/2026/06/CELEBLABEL-logo-001.jpg" 
+           alt="CELEBLABEL Logo" 
+           class="w-24 h-24 mx-auto rounded-2xl object-contain mb-4 shadow-md">
+      
+      <h1 class="text-3xl font-bold text-gray-800">CELEBLABEL</h1>
+      <p class="text-gray-600 mt-1">honest k-beauty reviews & curated picks</p>
+      <a href="https://celeblabel.com" target="_blank" 
+         class="text-pink-600 hover:underline text-sm mt-1 inline-block">celeblabel.com</a>
     </div>
 
-    <div class="space-y-4">
-      <a href="https://celeblabel.com" target="_blank" 
-         class="link-card block bg-white rounded-3xl py-5 px-6 font-semibold text-lg shadow-lg hover:bg-pink-50 flex items-center justify-center gap-3">
-        <i class="fa-solid fa-blog"></i> CELEBLABEL 블로그
+    <!-- Main Links -->
+    <div class="space-y-3 mb-8">
+      <a href="https://celeblabel.com" target="_blank"
+         class="link-btn flex items-center justify-center gap-3 w-full bg-white hover:bg-pink-50 border border-gray-200 rounded-2xl py-4 px-6 text-lg font-medium text-gray-700 shadow-sm">
+        <i class="fa-solid fa-blog text-pink-500"></i>
+        Official Blog
       </a>
-      
-      <a href="https://www.amazon.com/shop/celeblabel" target="_blank" 
-         class="link-card block bg-white rounded-3xl py-5 px-6 font-semibold text-lg shadow-lg hover:bg-pink-50 flex items-center justify-center gap-3">
-        <i class="fa-solid fa-cart-shopping"></i> 아마존 추천 제품
+
+      <a href="https://www.amazon.com/shop/celeblabel" target="_blank"
+         class="link-btn flex items-center justify-center gap-3 w-full bg-white hover:bg-pink-50 border border-gray-200 rounded-2xl py-4 px-6 text-lg font-medium text-gray-700 shadow-sm">
+        <i class="fa-solid fa-cart-shopping text-orange-500"></i>
+        Amazon Shop
       </a>
-      
-      <a href="https://instagram.com/celeblabel" target="_blank" 
-         class="link-card block bg-white rounded-3xl py-5 px-6 font-semibold text-lg shadow-lg hover:bg-pink-50 flex items-center justify-center gap-3">
-        <i class="fa-brands fa-instagram"></i> Instagram
+
+      <a href="https://youtube.com/@celeblabel" target="_blank"
+         class="link-btn flex items-center justify-center gap-3 w-full bg-white hover:bg-pink-50 border border-gray-200 rounded-2xl py-4 px-6 text-lg font-medium text-gray-700 shadow-sm">
+        <i class="fa-brands fa-youtube text-red-600"></i>
+        YouTube
       </a>
     </div>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center gap-6 text-2xl">
+      <a href="https://www.instagram.com/celeblabel/" target="_blank" class="text-gray-600 hover:text-pink-600 transition-colors">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/@celeblabel" target="_blank" class="text-gray-600 hover:text-red-600 transition-colors">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+      <a href="https://www.tiktok.com/@celeblabel" target="_blank" class="text-gray-600 hover:text-black transition-colors">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+      <a href="mailto:your-email@celeblabel.com" class="text-gray-600 hover:text-blue-600 transition-colors">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-10 text-sm text-gray-400">
+      <p>© CELEBLABEL — Honest K-Beauty Reviews</p>
+    </div>
+
   </div>
 </body>
 </html>

@@ -4,78 +4,273 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CELEBLABEL | Link</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="CELEBLABEL — honest k-beauty reviews & curated picks">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CELEBLABEL | Link">
+  <meta property="og:description" content="honest k-beauty reviews & curated picks">
+  <meta property="og:image" content="https://www.celeblabel.com/wp-content/uploads/2026/06/CELEBLABEL-logo-001.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="https://www.celeblabel.com/wp-content/uploads/2026/04/cropped-fav-150-270x270.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #f6d8cc;        /* soft peach */
+      --card: #ffffff;
+      --text: #20211f;
+      --sub: #7a6a63;
+      --line: #f0e4de;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      background: linear-gradient(135deg, #fdf4ff, #f0f9ff);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
     }
-    .link-btn {
-      transition: all 0.3s ease;
+
+    .wrap {
+      width: 100%;
+      max-width: 440px;
+      padding: 44px 20px 56px;
+      display: flex;
+      flex-direction: column;
     }
-    .link-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    /* ---------- Profile ---------- */
+    .profile { text-align: center; margin-bottom: 22px; }
+
+    .logo {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      background: #fff;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0,0,0,.10);
+    }
+    .logo img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
+
+    .profile h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .profile .bio {
+      font-size: 14.5px;
+      color: #514741;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .profile .site {
+      display: inline-block;
+      font-size: 13.5px;
+      color: #6b5b54;
+      text-decoration: none;
+      margin-top: 6px;
+      font-weight: 600;
+    }
+    .profile .site:hover { text-decoration: underline; }
+
+    /* ---------- Social icons ---------- */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      font-size: 22px;
+      margin: 18px 0 26px;
+    }
+    .socials a {
+      color: #2a2622;
+      width: 26px;
+      text-align: center;
+      transition: transform .18s ease, opacity .18s ease;
+    }
+    .socials a:hover { transform: translateY(-3px); opacity: .65; }
+
+    /* ---------- Amazon CTA ---------- */
+    .amazon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #ff9900;
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15.5px;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 22px;
+      box-shadow: 0 6px 16px rgba(255,153,0,.30);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .amazon-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(255,153,0,.38); }
+
+    /* ---------- Section label ---------- */
+    .label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #8a7068;
+      margin: 0 4px 12px;
+    }
+
+    /* ---------- Product cards ---------- */
+    .products { display: flex; flex-direction: column; gap: 12px; }
+
+    .product {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 12px;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: 0 4px 14px rgba(120,80,60,.10);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .product:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(120,80,60,.16); }
+
+    .product .thumb {
+      width: 66px;
+      height: 66px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #f3ece8;
+    }
+
+    .product .meta { flex: 1; min-width: 0; }
+
+    .product .meta .title {
+      font-size: 14.5px;
+      font-weight: 600;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .product .meta .tag {
+      font-size: 12px;
+      color: var(--sub);
+      margin-top: 4px;
+    }
+
+    .product .arrow { color: #d9c7bf; font-size: 13px; flex-shrink: 0; padding-right: 4px; }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      margin-top: 34px;
+      font-size: 11.5px;
+      color: #9a857c;
     }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center py-10 px-4">
-  <div class="max-w-md w-full mx-auto">
-    
-    <!-- Header with Logo -->
-    <div class="text-center mb-8">
-      <img src="https://www.celeblabel.com/wp-content/uploads/2026/06/CELEBLABEL-logo-001.jpg" 
-           alt="CELEBLABEL Logo" 
-           class="w-24 h-24 mx-auto rounded-2xl object-contain mb-4 shadow-md">
-      
-      <h1 class="text-3xl font-bold text-gray-800">CELEBLABEL</h1>
-      <p class="text-gray-600 mt-1">honest k-beauty reviews & curated picks</p>
-      <a href="https://celeblabel.com" target="_blank" 
-         class="text-pink-600 hover:underline text-sm mt-1 inline-block">celeblabel.com</a>
-    </div>
+<body>
+  <main class="wrap">
 
-    <!-- Main Links -->
-    <div class="space-y-3 mb-8">
-      <a href="https://celeblabel.com" target="_blank"
-         class="link-btn flex items-center justify-center gap-3 w-full bg-white hover:bg-pink-50 border border-gray-200 rounded-2xl py-4 px-6 text-lg font-medium text-gray-700 shadow-sm">
-        <i class="fa-solid fa-blog text-pink-500"></i>
-        Official Blog
+    <!-- Profile -->
+    <section class="profile">
+      <div class="logo">
+        <img src="https://www.celeblabel.com/wp-content/uploads/2026/06/CELEBLABEL-logo-001.jpg" alt="CELEBLABEL">
+      </div>
+      <h1>celeblabel</h1>
+      <p class="bio">honest k-beauty reviews &amp; curated picks</p>
+      <a class="site" href="https://celeblabel.com" target="_blank" rel="noopener">celeblabel.com</a>
+    </section>
+
+    <!-- Social icons -->
+    <nav class="socials">
+      <a href="https://youtube.com/@celeblabel" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.instagram.com/celeblabel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@celeblabel" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="mailto:hello@celeblabel.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    </nav>
+
+    <!-- Amazon shop CTA -->
+    <a class="amazon-btn" href="https://www.amazon.com/shop/celeblabel03" target="_blank" rel="noopener">
+      <i class="fa-brands fa-amazon"></i> Shop on Amazon
+    </a>
+
+    <!-- Products / Reviews -->
+    <p class="label">Latest Reviews</p>
+    <section class="products">
+
+      <!-- ====== PRODUCT CARD TEMPLATE — copy a block below to add more ======
+      <a class="product" href="POST_URL" target="_blank" rel="noopener">
+        <img class="thumb" src="IMAGE_URL" alt="">
+        <span class="meta">
+          <span class="title">POST TITLE</span>
+          <span class="tag">SHORT TAG</span>
+        </span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+      </a>
+      ==================================================================== -->
+
+      <a class="product" href="https://www.celeblabel.com/best-korean-sunscreens-amazon/" target="_blank" rel="noopener">
+        <img class="thumb" src="https://www.celeblabel.com/wp-content/uploads/2026/04/Korean-skincare-sunscreen-products.jpg" alt="">
+        <span class="meta">
+          <span class="title">The 7 Best Korean Sunscreens on Amazon (2026)</span>
+          <span class="tag">Editor-tested · K-Beauty</span>
+        </span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
       </a>
 
-      <a href="https://www.amazon.com/shop/celeblabel" target="_blank"
-         class="link-btn flex items-center justify-center gap-3 w-full bg-white hover:bg-pink-50 border border-gray-200 rounded-2xl py-4 px-6 text-lg font-medium text-gray-700 shadow-sm">
-        <i class="fa-solid fa-cart-shopping text-orange-500"></i>
-        Amazon Shop
+      <a class="product" href="https://www.celeblabel.com/medicube-zero-pore-pad-compared/" target="_blank" rel="noopener">
+        <img class="thumb" src="https://www.celeblabel.com/wp-content/uploads/2026/05/medicube-zero-pore-pad-all-variants-comparison.jpg" alt="">
+        <span class="meta">
+          <span class="title">Medicube Zero Pore Pad — All 7 Variants Compared</span>
+          <span class="tag">Full lineup guide</span>
+        </span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
       </a>
 
-      <a href="https://youtube.com/@celeblabel" target="_blank"
-         class="link-btn flex items-center justify-center gap-3 w-full bg-white hover:bg-pink-50 border border-gray-200 rounded-2xl py-4 px-6 text-lg font-medium text-gray-700 shadow-sm">
-        <i class="fa-brands fa-youtube text-red-600"></i>
-        YouTube
+      <a class="product" href="https://www.celeblabel.com/biodance-bio-collagen-mask-review/" target="_blank" rel="noopener">
+        <img class="thumb" src="https://www.celeblabel.com/wp-content/uploads/2026/05/biodance-bio-collagen-mask-review-celeblabel.jpg" alt="">
+        <span class="meta">
+          <span class="title">Biodance Bio-Collagen Real Deep Mask Review</span>
+          <span class="tag">Honest TikTok-viral test</span>
+        </span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
       </a>
-    </div>
 
-    <!-- Social Icons -->
-    <div class="flex justify-center gap-6 text-2xl">
-      <a href="https://www.instagram.com/celeblabel/" target="_blank" class="text-gray-600 hover:text-pink-600 transition-colors">
-        <i class="fa-brands fa-instagram"></i>
+      <a class="product" href="https://www.celeblabel.com/best-pdrn-serums-amazon/" target="_blank" rel="noopener">
+        <img class="thumb" src="https://www.celeblabel.com/wp-content/uploads/2026/04/Best-PDRN-serums-on-Amazon-in-2026.jpg" alt="">
+        <span class="meta">
+          <span class="title">5 Best PDRN Serums on Amazon (2026)</span>
+          <span class="tag">Glass-skin glow edit</span>
+        </span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
       </a>
-      <a href="https://youtube.com/@celeblabel" target="_blank" class="text-gray-600 hover:text-red-600 transition-colors">
-        <i class="fa-brands fa-youtube"></i>
-      </a>
-      <a href="https://www.tiktok.com/@celeblabel" target="_blank" class="text-gray-600 hover:text-black transition-colors">
-        <i class="fa-brands fa-tiktok"></i>
-      </a>
-      <a href="mailto:your-email@celeblabel.com" class="text-gray-600 hover:text-blue-600 transition-colors">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
-    </div>
 
-    <!-- Footer -->
-    <div class="text-center mt-10 text-sm text-gray-400">
-      <p>© CELEBLABEL — Honest K-Beauty Reviews</p>
-    </div>
+    </section>
 
-  </div>
+    <footer>© CELEBLABEL — Honest K-Beauty Reviews</footer>
+
+  </main>
 </body>
 </html>

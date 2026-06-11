@@ -19,11 +19,10 @@
 
   <style>
     :root {
-      --bg: #f6d8cc;        /* soft peach */
+      --bg: #f6d8cc;
       --card: #ffffff;
       --text: #20211f;
       --sub: #7a6a63;
-      --line: #f0e4de;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,144 +49,97 @@
     .profile { text-align: center; margin-bottom: 22px; }
 
     .logo {
-      width: 104px;
-      height: 104px;
+      width: 104px; height: 104px;
       border-radius: 50%;
       background: #fff;
       margin: 0 auto 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       overflow: hidden;
       box-shadow: 0 8px 22px rgba(0,0,0,.10);
     }
-    .logo img {
-      width: 80%;
-      height: 80%;
-      object-fit: contain;
-    }
+    .logo img { width: 80%; height: 80%; object-fit: contain; }
 
-    .profile h1 {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: .2px;
-    }
-
-    .profile .bio {
-      font-size: 14.5px;
-      color: #514741;
-      margin-top: 8px;
-      line-height: 1.5;
-    }
-
+    .profile h1 { font-size: 24px; font-weight: 800; letter-spacing: .2px; }
+    .profile .bio { font-size: 14.5px; color: #514741; margin-top: 8px; line-height: 1.5; }
     .profile .site {
-      display: inline-block;
-      font-size: 13.5px;
-      color: #6b5b54;
-      text-decoration: none;
-      margin-top: 6px;
-      font-weight: 600;
+      display: inline-block; font-size: 13.5px; color: #6b5b54;
+      text-decoration: none; margin-top: 6px; font-weight: 600;
     }
     .profile .site:hover { text-decoration: underline; }
 
     /* ---------- Social icons ---------- */
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 26px;
-      font-size: 22px;
-      margin: 18px 0 26px;
-    }
-    .socials a {
-      color: #2a2622;
-      width: 26px;
-      text-align: center;
-      transition: transform .18s ease, opacity .18s ease;
-    }
+    .socials { display: flex; justify-content: center; gap: 26px; font-size: 22px; margin: 18px 0 26px; }
+    .socials a { color: #2a2622; width: 26px; text-align: center; transition: transform .18s ease, opacity .18s ease; }
     .socials a:hover { transform: translateY(-3px); opacity: .65; }
 
     /* ---------- Amazon CTA ---------- */
     .amazon-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: #ff9900;
-      color: #1a1a1a;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 15.5px;
-      border-radius: 16px;
-      padding: 16px;
-      margin-bottom: 22px;
-      box-shadow: 0 6px 16px rgba(255,153,0,.30);
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: #ff9900; color: #1a1a1a; text-decoration: none;
+      font-weight: 700; font-size: 15.5px; border-radius: 16px; padding: 16px;
+      margin-bottom: 24px; box-shadow: 0 6px 16px rgba(255,153,0,.30);
       transition: transform .18s ease, box-shadow .18s ease;
     }
     .amazon-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(255,153,0,.38); }
 
     /* ---------- Section label ---------- */
     .label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #8a7068;
-      margin: 0 4px 12px;
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #8a7068; margin: 0 4px 12px;
     }
+    .label .count { font-weight: 600; letter-spacing: .5px; opacity: .8; }
 
     /* ---------- Product cards ---------- */
-    .products { display: flex; flex-direction: column; gap: 12px; }
+    .products { display: flex; flex-direction: column; gap: 12px; min-height: 120px; }
 
     .product {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: var(--card);
-      border-radius: 16px;
-      padding: 12px;
-      text-decoration: none;
-      color: var(--text);
+      display: flex; align-items: center; gap: 14px;
+      background: var(--card); border-radius: 16px; padding: 12px;
+      text-decoration: none; color: var(--text);
       box-shadow: 0 4px 14px rgba(120,80,60,.10);
       transition: transform .18s ease, box-shadow .18s ease;
     }
     .product:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(120,80,60,.16); }
 
     .product .thumb {
-      width: 66px;
-      height: 66px;
-      border-radius: 12px;
-      object-fit: cover;
-      flex-shrink: 0;
-      background: #f3ece8;
+      width: 66px; height: 66px; border-radius: 12px;
+      object-fit: cover; flex-shrink: 0; background: #f3ece8;
     }
-
     .product .meta { flex: 1; min-width: 0; }
-
     .product .meta .title {
-      font-size: 14.5px;
-      font-weight: 600;
-      line-height: 1.35;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      font-size: 14.5px; font-weight: 600; line-height: 1.35;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
     }
-
-    .product .meta .tag {
-      font-size: 12px;
-      color: var(--sub);
-      margin-top: 4px;
-    }
-
+    .product .meta .date { font-size: 12px; color: var(--sub); margin-top: 5px; }
     .product .arrow { color: #d9c7bf; font-size: 13px; flex-shrink: 0; padding-right: 4px; }
 
-    /* ---------- Footer ---------- */
-    footer {
-      text-align: center;
-      margin-top: 34px;
-      font-size: 11.5px;
-      color: #9a857c;
+    /* ---------- States ---------- */
+    .state { text-align: center; color: #7a6a63; font-size: 14px; padding: 24px 0; }
+    .state a { color: #b15b3c; font-weight: 600; }
+    .skeleton {
+      height: 90px; border-radius: 16px;
+      background: linear-gradient(90deg,#fff 25%,#f7ede8 37%,#fff 63%);
+      background-size: 400% 100%; animation: sk 1.3s ease infinite;
     }
+    @keyframes sk { 0% { background-position: 100% 0 } 100% { background-position: -100% 0 } }
+
+    /* ---------- Pagination ---------- */
+    .pager { display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 22px; }
+    .pager button {
+      min-width: 36px; height: 36px; padding: 0 10px;
+      border: none; border-radius: 10px; cursor: pointer;
+      font-family: inherit; font-size: 13.5px; font-weight: 600;
+      background: #fff; color: #5b4f49;
+      box-shadow: 0 2px 8px rgba(120,80,60,.10);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .pager button:hover:not(:disabled) { transform: translateY(-1px); }
+    .pager button.active { background: #2a2622; color: #fff; }
+    .pager button:disabled { opacity: .4; cursor: default; }
+
+    /* ---------- Footer ---------- */
+    footer { text-align: center; margin-top: 34px; font-size: 11.5px; color: #9a857c; }
   </style>
 </head>
 <body>
@@ -216,61 +168,111 @@
       <i class="fa-brands fa-amazon"></i> Shop on Amazon
     </a>
 
-    <!-- Products / Reviews -->
-    <p class="label">Latest Reviews</p>
-    <section class="products">
-
-      <!-- ====== PRODUCT CARD TEMPLATE — copy a block below to add more ======
-      <a class="product" href="POST_URL" target="_blank" rel="noopener">
-        <img class="thumb" src="IMAGE_URL" alt="">
-        <span class="meta">
-          <span class="title">POST TITLE</span>
-          <span class="tag">SHORT TAG</span>
-        </span>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-      ==================================================================== -->
-
-      <a class="product" href="https://www.celeblabel.com/best-korean-sunscreens-amazon/" target="_blank" rel="noopener">
-        <img class="thumb" src="https://www.celeblabel.com/wp-content/uploads/2026/04/Korean-skincare-sunscreen-products.jpg" alt="">
-        <span class="meta">
-          <span class="title">The 7 Best Korean Sunscreens on Amazon (2026)</span>
-          <span class="tag">Editor-tested · K-Beauty</span>
-        </span>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-
-      <a class="product" href="https://www.celeblabel.com/medicube-zero-pore-pad-compared/" target="_blank" rel="noopener">
-        <img class="thumb" src="https://www.celeblabel.com/wp-content/uploads/2026/05/medicube-zero-pore-pad-all-variants-comparison.jpg" alt="">
-        <span class="meta">
-          <span class="title">Medicube Zero Pore Pad — All 7 Variants Compared</span>
-          <span class="tag">Full lineup guide</span>
-        </span>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-
-      <a class="product" href="https://www.celeblabel.com/biodance-bio-collagen-mask-review/" target="_blank" rel="noopener">
-        <img class="thumb" src="https://www.celeblabel.com/wp-content/uploads/2026/05/biodance-bio-collagen-mask-review-celeblabel.jpg" alt="">
-        <span class="meta">
-          <span class="title">Biodance Bio-Collagen Real Deep Mask Review</span>
-          <span class="tag">Honest TikTok-viral test</span>
-        </span>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-
-      <a class="product" href="https://www.celeblabel.com/best-pdrn-serums-amazon/" target="_blank" rel="noopener">
-        <img class="thumb" src="https://www.celeblabel.com/wp-content/uploads/2026/04/Best-PDRN-serums-on-Amazon-in-2026.jpg" alt="">
-        <span class="meta">
-          <span class="title">5 Best PDRN Serums on Amazon (2026)</span>
-          <span class="tag">Glass-skin glow edit</span>
-        </span>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-
+    <!-- Reviews (auto-loaded from celeblabel.com) -->
+    <div class="label"><span>Latest Reviews</span><span class="count" id="count"></span></div>
+    <section class="products" id="products">
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
+      <div class="skeleton"></div>
     </section>
+    <div class="pager" id="pager"></div>
 
     <footer>© CELEBLABEL — Honest K-Beauty Reviews</footer>
-
   </main>
+
+  <script>
+  /* =========================================================
+     Reviews auto-load from celeblabel.com (WordPress REST API).
+     Publish a new blog post → it appears here automatically,
+     newest first, 10 per page. No code edits needed.
+
+     To change posts-per-page, edit PER_PAGE below.
+     ========================================================= */
+  const PER_PAGE = 10;
+  const API = 'https://www.celeblabel.com/wp-json/wp/v2/posts?per_page=100&_embed=1';
+  const LOGO_FALLBACK = 'https://www.celeblabel.com/wp-content/uploads/2026/04/cropped-fav-150-270x270.png';
+
+  const $products = document.getElementById('products');
+  const $pager    = document.getElementById('pager');
+  const $count    = document.getElementById('count');
+
+  let posts = [];
+  let page = 1;
+
+  function decode(html) {
+    const t = document.createElement('textarea');
+    t.innerHTML = html;
+    return t.value;
+  }
+
+  function imageOf(p) {
+    try {
+      const m = p._embedded['wp:featuredmedia'][0];
+      const sizes = m.media_details && m.media_details.sizes;
+      if (sizes) {
+        return (sizes.medium_large || sizes.medium || sizes.large || sizes.full).source_url;
+      }
+      return m.source_url;
+    } catch (e) { return LOGO_FALLBACK; }
+  }
+
+  function fmtDate(iso) {
+    const d = new Date(iso);
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+  function render() {
+    const totalPages = Math.max(1, Math.ceil(posts.length / PER_PAGE));
+    page = Math.min(page, totalPages);
+    const start = (page - 1) * PER_PAGE;
+    const slice = posts.slice(start, start + PER_PAGE);
+
+    $count.textContent = posts.length + ' posts';
+    $products.innerHTML = slice.map(p => `
+      <a class="product" href="${p.link}" target="_blank" rel="noopener">
+        <img class="thumb" src="${imageOf(p)}" alt="" loading="lazy"
+             onerror="this.src='${LOGO_FALLBACK}'">
+        <span class="meta">
+          <span class="title">${decode(p.title.rendered)}</span>
+          <span class="date">${fmtDate(p.date)}</span>
+        </span>
+        <i class="fa-solid fa-chevron-right arrow"></i>
+      </a>`).join('');
+
+    // pager
+    let html = '';
+    html += `<button ${page === 1 ? 'disabled' : ''} data-go="${page - 1}">‹</button>`;
+    for (let i = 1; i <= totalPages; i++) {
+      html += `<button class="${i === page ? 'active' : ''}" data-go="${i}">${i}</button>`;
+    }
+    html += `<button ${page === totalPages ? 'disabled' : ''} data-go="${page + 1}">›</button>`;
+    $pager.innerHTML = totalPages > 1 ? html : '';
+
+    $pager.querySelectorAll('button[data-go]').forEach(b => {
+      b.addEventListener('click', () => {
+        page = parseInt(b.dataset.go, 10);
+        render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  }
+
+  fetch(API)
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      posts = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      if (!posts.length) {
+        $products.innerHTML = '<div class="state">No posts yet.</div>';
+        return;
+      }
+      render();
+    })
+    .catch(() => {
+      $products.innerHTML =
+        '<div class="state">Could not load reviews right now.<br>' +
+        'Visit <a href="https://celeblabel.com" target="_blank" rel="noopener">celeblabel.com</a> instead.</div>';
+      $pager.innerHTML = '';
+    });
+  </script>
 </body>
 </html>

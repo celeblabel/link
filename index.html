@@ -5,18 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CELEBLABEL | Link</title>
   <meta name="description" content="CELEBLABEL — honest k-beauty reviews & curated picks">
-
   <!-- Open Graph -->
   <meta property="og:title" content="CELEBLABEL | Link">
   <meta property="og:description" content="honest k-beauty reviews & curated picks">
   <meta property="og:image" content="https://www.celeblabel.com/wp-content/uploads/2026/06/CELEBLABEL-logo-001.jpg">
   <meta property="og:type" content="website">
-
   <link rel="icon" href="https://www.celeblabel.com/wp-content/uploads/2026/04/cropped-fav-150-270x270.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg: #f6d8cc;
@@ -24,9 +21,7 @@
       --text: #20211f;
       --sub: #7a6a63;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -36,7 +31,6 @@
       display: flex;
       justify-content: center;
     }
-
     .wrap {
       width: 100%;
       max-width: 440px;
@@ -44,10 +38,8 @@
       display: flex;
       flex-direction: column;
     }
-
     /* ---------- Profile ---------- */
     .profile { text-align: center; margin-bottom: 22px; }
-
     .logo {
       width: 104px; height: 104px;
       border-radius: 50%;
@@ -58,7 +50,6 @@
       box-shadow: 0 8px 22px rgba(0,0,0,.10);
     }
     .logo img { width: 80%; height: 80%; object-fit: contain; }
-
     .profile h1 { font-size: 24px; font-weight: 800; letter-spacing: .2px; }
     .profile .bio { font-size: 14.5px; color: #514741; margin-top: 8px; line-height: 1.5; }
     .profile .site {
@@ -66,12 +57,43 @@
       text-decoration: none; margin-top: 6px; font-weight: 600;
     }
     .profile .site:hover { text-decoration: underline; }
-
     /* ---------- Social icons ---------- */
     .socials { display: flex; justify-content: center; gap: 26px; font-size: 22px; margin: 18px 0 26px; }
     .socials a { color: #2a2622; width: 26px; text-align: center; transition: transform .18s ease, opacity .18s ease; }
     .socials a:hover { transform: translateY(-3px); opacity: .65; }
-
+    /* ---------- Featured (As seen in my latest reel) ---------- */
+    .featured-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #b15b3c; margin: 0 4px 10px;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .featured-label .dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #e0674a;
+      animation: blink 1.6s ease infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+    .featured {
+      display: flex; align-items: center; gap: 14px;
+      background: #fff;
+      border: 2px solid #f0b9a4;
+      border-radius: 18px; padding: 14px;
+      text-decoration: none; color: var(--text);
+      box-shadow: 0 8px 22px rgba(224,103,74,.18);
+      margin-bottom: 26px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .featured:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(224,103,74,.26); }
+    .featured .thumb {
+      width: 78px; height: 78px; border-radius: 14px;
+      object-fit: cover; flex-shrink: 0; background: #f3ece8;
+    }
+    .featured .meta { flex: 1; min-width: 0; }
+    .featured .meta .title {
+      font-size: 15px; font-weight: 700; line-height: 1.35;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .featured .meta .note { font-size: 12.5px; color: #b15b3c; margin-top: 5px; font-weight: 600; }
+    .featured .arrow { color: #e0a58e; font-size: 14px; flex-shrink: 0; padding-right: 2px; }
     /* ---------- Amazon CTA ---------- */
     .amazon-btn {
       display: flex; align-items: center; justify-content: center; gap: 10px;
@@ -81,7 +103,6 @@
       transition: transform .18s ease, box-shadow .18s ease;
     }
     .amazon-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(255,153,0,.38); }
-
     /* ---------- Section label ---------- */
     .label {
       display: flex; justify-content: space-between; align-items: baseline;
@@ -89,10 +110,24 @@
       color: #8a7068; margin: 0 4px 12px;
     }
     .label .count { font-weight: 600; letter-spacing: .5px; opacity: .8; }
-
+    /* ---------- Category chips ---------- */
+    .chips {
+      display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 14px;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    }
+    .chips::-webkit-scrollbar { display: none; }
+    .chips button {
+      flex-shrink: 0; border: none; cursor: pointer;
+      font-family: inherit; font-size: 12.5px; font-weight: 600;
+      padding: 8px 14px; border-radius: 999px;
+      background: #fff; color: #5b4f49;
+      box-shadow: 0 2px 8px rgba(120,80,60,.10);
+      transition: transform .15s ease, background .15s ease, color .15s ease;
+    }
+    .chips button:hover { transform: translateY(-1px); }
+    .chips button.active { background: #2a2622; color: #fff; }
     /* ---------- Product cards ---------- */
     .products { display: flex; flex-direction: column; gap: 12px; min-height: 120px; }
-
     .product {
       display: flex; align-items: center; gap: 14px;
       background: var(--card); border-radius: 16px; padding: 12px;
@@ -101,7 +136,6 @@
       transition: transform .18s ease, box-shadow .18s ease;
     }
     .product:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(120,80,60,.16); }
-
     .product .thumb {
       width: 66px; height: 66px; border-radius: 12px;
       object-fit: cover; flex-shrink: 0; background: #f3ece8;
@@ -113,7 +147,6 @@
     }
     .product .meta .date { font-size: 12px; color: var(--sub); margin-top: 5px; }
     .product .arrow { color: #d9c7bf; font-size: 13px; flex-shrink: 0; padding-right: 4px; }
-
     /* ---------- States ---------- */
     .state { text-align: center; color: #7a6a63; font-size: 14px; padding: 24px 0; }
     .state a { color: #b15b3c; font-weight: 600; }
@@ -123,7 +156,6 @@
       background-size: 400% 100%; animation: sk 1.3s ease infinite;
     }
     @keyframes sk { 0% { background-position: 100% 0 } 100% { background-position: -100% 0 } }
-
     /* ---------- Pagination ---------- */
     .pager { display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 22px; }
     .pager button {
@@ -137,14 +169,13 @@
     .pager button:hover:not(:disabled) { transform: translateY(-1px); }
     .pager button.active { background: #2a2622; color: #fff; }
     .pager button:disabled { opacity: .4; cursor: default; }
-
     /* ---------- Footer ---------- */
-    footer { text-align: center; margin-top: 34px; font-size: 11.5px; color: #9a857c; }
+    footer { text-align: center; margin-top: 34px; font-size: 11.5px; color: #9a857c; line-height: 1.7; }
+    footer .disclosure { display: block; margin-top: 6px; opacity: .9; }
   </style>
 </head>
 <body>
   <main class="wrap">
-
     <!-- Profile -->
     <section class="profile">
       <div class="logo">
@@ -154,7 +185,6 @@
       <p class="bio">honest k-beauty reviews &amp; curated picks</p>
       <a class="site" href="https://celeblabel.com" target="_blank" rel="noopener">celeblabel.com</a>
     </section>
-
     <!-- Social icons -->
     <nav class="socials">
       <a href="https://youtube.com/@celeblabel" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -163,48 +193,69 @@
       <a href="mailto:hello@celeblabel.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
     </nav>
 
+    <!-- ===== Featured: as seen in my latest reel =====
+         ★ 새 릴스/틱톡을 올릴 때마다 아래 <script>의 FEATURED 값만 바꾸세요.
+         숨기려면 enabled: false. ===== -->
+    <div id="featured-slot"></div>
+
     <!-- Amazon shop CTA -->
     <a class="amazon-btn" href="https://www.amazon.com/shop/celeblabel03" target="_blank" rel="noopener">
       <i class="fa-brands fa-amazon"></i> Shop on Amazon
     </a>
-
     <!-- Reviews (auto-loaded from celeblabel.com) -->
     <div class="label"><span>Latest Reviews</span><span class="count" id="count"></span></div>
+    <div class="chips" id="chips"></div>
     <section class="products" id="products">
       <div class="skeleton"></div>
       <div class="skeleton"></div>
       <div class="skeleton"></div>
     </section>
     <div class="pager" id="pager"></div>
-
-    <footer>© CELEBLABEL — Honest K-Beauty Reviews</footer>
+    <footer>
+      © CELEBLABEL — Honest K-Beauty Reviews
+      <span class="disclosure">As an Amazon Associate, CELEBLABEL earns from qualifying purchases.</span>
+    </footer>
   </main>
-
   <script>
+  /* =========================================================
+     ★ FEATURED — 최신 릴스 연동 카드 (여기만 수정하세요)
+       url   : 릴스에서 소개한 리뷰 글 주소
+       title : 카드에 보일 제목
+       thumb : 썸네일 이미지 주소 (블로그 대표 이미지)
+       note  : 작게 표시되는 강조 문구
+       enabled: false 로 하면 카드가 숨겨집니다.
+     ========================================================= */
+  const FEATURED = {
+    enabled: true,
+    url:   'https://www.celeblabel.com/cosrx-snail-mucin-essence-review/',
+    title: 'COSRX Snail 96 Mucin Essence — the K-beauty essence everyone keeps repurchasing',
+    thumb: 'https://www.celeblabel.com/wp-content/uploads/2026/05/cosrx-snail-96-mucin-essence-bottle.jpg',
+    note:  'As seen in my latest reel →'
+  };
+
   /* =========================================================
      Reviews auto-load from celeblabel.com (WordPress REST API).
      Publish a new blog post → it appears here automatically,
      newest first, 10 per page. No code edits needed.
-
      To change posts-per-page, edit PER_PAGE below.
      ========================================================= */
   const PER_PAGE = 10;
   const API = 'https://www.celeblabel.com/wp-json/wp/v2/posts?per_page=100&_embed=1';
   const LOGO_FALLBACK = 'https://www.celeblabel.com/wp-content/uploads/2026/04/cropped-fav-150-270x270.png';
-
   const $products = document.getElementById('products');
   const $pager    = document.getElementById('pager');
   const $count    = document.getElementById('count');
-
-  let posts = [];
+  const $chips    = document.getElementById('chips');
+  const $featured = document.getElementById('featured-slot');
+  let posts = [];          // all posts
+  let filtered = [];       // after category filter
+  let activeCat = 'All';
   let page = 1;
-
   function decode(html) {
     const t = document.createElement('textarea');
     t.innerHTML = html;
     return t.value;
   }
-
   function imageOf(p) {
     try {
       const m = p._embedded['wp:featuredmedia'][0];
@@ -215,19 +266,61 @@
       return m.source_url;
     } catch (e) { return LOGO_FALLBACK; }
   }
-
+  function catsOf(p) {
+    try {
+      return p._embedded['wp:term']
+        .flat()
+        .filter(t => t.taxonomy === 'category')
+        .map(t => decode(t.name));
+    } catch (e) { return []; }
+  }
   function fmtDate(iso) {
     const d = new Date(iso);
     return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
   }
-
+  /* ----- Featured card ----- */
+  function renderFeatured() {
+    if (!FEATURED.enabled) { $featured.innerHTML = ''; return; }
+    $featured.innerHTML =
+      '<div class="featured-label"><span class="dot"></span> As seen in my latest reel</div>' +
+      '<a class="featured" href="' + FEATURED.url + '" target="_blank" rel="noopener">' +
+        '<img class="thumb" src="' + FEATURED.thumb + '" alt="" loading="lazy" onerror="this.src=\'' + LOGO_FALLBACK + '\'">' +
+        '<span class="meta">' +
+          '<span class="title">' + FEATURED.title + '</span>' +
+          '<span class="note">' + FEATURED.note + '</span>' +
+        '</span>' +
+        '<i class="fa-solid fa-chevron-right arrow"></i>' +
+      '</a>';
+  }
+  /* ----- Category chips ----- */
+  function buildChips() {
+    const counts = {};
+    posts.forEach(p => catsOf(p).forEach(c => { counts[c] = (counts[c] || 0) + 1; }));
+    const names = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+    let html = '<button class="active" data-cat="All">All</button>';
+    names.forEach(n => { html += '<button data-cat="' + n + '">' + n + '</button>'; });
+    $chips.innerHTML = html;
+    $chips.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeCat = btn.dataset.cat;
+        $chips.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+        page = 1;
+        applyFilter();
+      });
+    });
+  }
+  function applyFilter() {
+    filtered = activeCat === 'All'
+      ? posts
+      : posts.filter(p => catsOf(p).indexOf(activeCat) !== -1);
+    render();
+  }
   function render() {
-    const totalPages = Math.max(1, Math.ceil(posts.length / PER_PAGE));
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
     page = Math.min(page, totalPages);
     const start = (page - 1) * PER_PAGE;
-    const slice = posts.slice(start, start + PER_PAGE);
-
-    $count.textContent = posts.length + ' posts';
+    const slice = filtered.slice(start, start + PER_PAGE);
+    $count.textContent = filtered.length + ' posts';
     $products.innerHTML = slice.map(p => `
       <a class="product" href="${p.link}" target="_blank" rel="noopener">
         <img class="thumb" src="${imageOf(p)}" alt="" loading="lazy"
@@ -238,7 +331,6 @@
         </span>
         <i class="fa-solid fa-chevron-right arrow"></i>
       </a>`).join('');
-
     // pager
     let html = '';
     html += `<button ${page === 1 ? 'disabled' : ''} data-go="${page - 1}">‹</button>`;
@@ -247,7 +339,6 @@
     }
     html += `<button ${page === totalPages ? 'disabled' : ''} data-go="${page + 1}">›</button>`;
     $pager.innerHTML = totalPages > 1 ? html : '';
-
     $pager.querySelectorAll('button[data-go]').forEach(b => {
       b.addEventListener('click', () => {
         page = parseInt(b.dataset.go, 10);
@@ -256,7 +347,7 @@
       });
     });
   }
-
+  renderFeatured();
   fetch(API)
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(data => {
@@ -265,7 +356,8 @@
         $products.innerHTML = '<div class="state">No posts yet.</div>';
         return;
       }
-      render();
+      buildChips();
+      applyFilter();
     })
     .catch(() => {
       $products.innerHTML =
